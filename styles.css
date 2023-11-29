@@ -1,0 +1,206 @@
+/* general */
+@font-face {
+    font-family: PlayfairDisplay;
+    src: url(PTSerif-Regular.ttf);
+}
+
+html {
+	margin: 1.5rem, 0.5rem;
+	padding: 1.5rem, 0.5rem;
+	font-family: "Regular 400", PlayfairDisplay, serif;
+	color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+br {
+	background-color: white !important;
+}
+
+/* nav bar */
+header {
+	background-color: aliceblue;
+	height: auto;
+	padding: 1.5rem;
+}
+
+a#home {
+	color: black;
+	align-content: center;
+	text-align: center;
+	padding: 1rem;
+	font-size: 2rem;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: rgb(208, 229, 248);
+}
+
+nav:has(a) {
+	text-align: center;
+	background-color: aliceblue;
+}
+
+nav a {
+	color: black;
+	align-content: center;
+	text-align: center;
+	padding: 1rem 1rem;
+	margin: 1rem 1rem;
+	font-size: 1rem;
+	text-decoration: none;
+	font-weight: 100;
+	background-color: azure;
+}
+  
+nav a:hover {
+	background-color: #ddd;
+}
+
+/* main */
+main, footer {
+	padding: 1rem;
+}
+
+h1 {
+	text-align: center;
+}
+
+section#intro {
+	text-align: center;
+}
+
+ol {
+	list-style-type: none;
+	padding: 1rem;
+  }
+
+
+/* resume */
+img#simi {
+	width: 35dvw;
+	height: 35dvw;
+	object-fit: contain;
+}
+
+img#resume {
+	width: 100dvw;
+	height: 100dvw;
+	object-fit: contain;
+}
+
+/* footer */
+footer div {
+	text-align: center;
+}
+
+div.socials {
+    display: block;
+}
+
+div.socials > * {
+    padding: 1rem;
+}
+
+@media (min-width:768px) {
+    div.socials {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+img.socials {
+	width: 10dvw;
+	height: 10dvw;
+	object-fit: contain;
+	transition: transform .2s;
+}
+
+img.socials:hover {
+	transform: scale(1.25);
+}
+
+footer a#backtotop {
+	color: black;
+	align-content: center;
+	text-align: center;
+	padding: .5rem;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+	margin-top: 15px;
+}
+  
+#submit {
+    padding: 5px;
+	margin-top: 50px;
+}
+
+input {
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+  
+output {
+    margin: 0;
+	padding: 0;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+  
+#wordCount {
+    margin-top: 5px;
+    color: white;
+}
+
+/* Theme */
+
+@keyframes fadeOut {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+
+.dark-mode {
+    background-color: #404040;
+    color: white;
+}
+
+output#emailErr, output#nameErr {
+	animation: fadeOut 2s forwards;
+	animation-delay: 4s;
+	background: #900;
+	color: white;
+	padding: 0px;
+	text-align: center;
+	
+	width: 100%;
+
+	font-size: 80%;
+	color: white;
+	background-color: #900;
+	border-radius: 0 0 5px 5px;
+	box-sizing: border-box;
+}
+
+.text-warning {
+	color: orange;
+}
+
+.text-danger {
+	color: red;
+}
