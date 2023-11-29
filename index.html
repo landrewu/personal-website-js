@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="styles.css">
+	<script src="script.js" defer></script>
 </head>
 <body>
 	<header>
@@ -18,26 +19,32 @@
 	</header>
 	<br/>
 	<main>
-		<section id="intro">
-			<h1 name="top"><strong>Hello,<br/>I'm Andrew Lu</strong></h1>
-			<picture>
-				<source src="similiu.jpg"/>
-				<img id="simi" src="similiu.jpg"/><br/>
-				Picture from Simi Liu's <cite><a href="https://twitter.com/SimuLiu">Twitter</a>.</cite>
-			</picture>
-		</section>
-		<hr/>
-		<section> 
-			<h2>Who I Am</h2>
-			<p>
-				I'm a passionate lifetime learner who's excited about using technology to benefit the people around me. I'm currently looking for full-time positions in Software Engineering, specifically internships.
-			</p>
-			<h3>How Can I Learn More?</h3>
-			<p>
-				Please visit any of the above sections in the navigation bar to learn more about me and my work.
-			</p>
-		</section>
+		<h1>Send Me an Email!</h1>
+		<form method="POST" action="https://httpbin.org/post">
+			
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name" minlength="0" maxlength="20" required>
+			<output name="error" id="nameErr" role="alert"></output>
+			<output name="info" id="nameInfo"></output>
+
+			<label for="email">Email:</label>
+			<input type="text" name="email" id="email" minlength="0" maxlength="20" required>
+			<output name="error" id="emailErr" role="alert"></output>
+			<output name="info" id="emailInfo"></output>
+
+			<label for="comments">Comments:</label>
+			<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+			<textarea id="comments" name="comments" id="comments" onkeyup="characterCount(this)" rows="10" cols="75" minlength="0" maxlength="300" required></textarea>
+			<output name="error" id="commentsErr" role="alert"></output>
+			<output name="info" id="commentsInfo"></output>
+
+			<input type="hidden" name="possible_bot" value="true">
+			<input type="hidden" name="form-errors" id="formErrors">
+
+			<input type="submit" id="submit" value="Submit">
+		</form>
 		<br/><br/><hr/>
+		<button id="darkModeButton" onclick="toggleTheme()">Toggle Dark Mode</button>
 	</main>
 	<footer>
 		<div class="socials">
